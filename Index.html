@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Drink Menu ☕</title>
+  <link rel="stylesheet" href="menu.css" />
+</head>
+<body>
+
+<main class="container">
+  <section class="menu">
+    <h1>☁️ Cozy Drink Menu ☁️</h1>
+
+    <input id="name" placeholder="Your name 💖" />
+
+    <div class="drinks">
+        <button onclick="selectDrink('Matcha Latte', this)">🍵 Matcha Latte</button>
+        <button onclick="selectDrink('Iced Coffee', this)">🧊 Iced Coffee</button>
+        <button onclick="selectDrink('Chai Latte', this)">🫖 Chai Latte</button>
+      </div>
+
+    <div class="customize">
+      <h2>Customize</h2>
+
+      <div class="grid">
+        <select id="size">
+          <option>Small</option>
+          <option>Medium</option>
+          <option>Large</option>
+        </select>
+
+        <select id="milk">
+          <option>Whole Milk</option>
+          <option>Oat Milk</option>
+          <option>Almond Milk</option>
+        </select>
+
+        <select id="sweetness">
+          <option>0%</option>
+          <option>50%</option>
+          <option>100%</option>
+        </select>
+      </div>
+
+      <textarea id="notes" placeholder="Extra notes ✨"></textarea>
+    </div>
+
+    <div class="order">
+      <h2 id="selectedDrink">No drink selected</h2>
+      <button onclick="submitOrder()">Submit Order 💌</button>
+    </div>
+  </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
+

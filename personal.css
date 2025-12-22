@@ -144,36 +144,40 @@ body {
   
    
   .team-member {
-    display: flex;          /* horizontal layout */
-    align-items: center;    /* vertically center image and text */
-    gap: 16px;              /* space between image and text */
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  margin: 2rem 0;
+  gap: 1.5rem;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 2rem;
+}
+
+.team-photo {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+}
+
+.team-info {
+  max-width: 600px;
+}
+
+@media (max-width: 768px) {
+  .team-member {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
   }
-  
-  .team-photo {
-    width: 325px;
-    height: 325px;
-    object-fit: cover;
-    border: 2px solid #ccc;
-    border-radius: 0;       /* square image */
-  }
-  
+
   .team-info {
-    /* optional: constrain text width */
-    max-width: 600px;
+    max-width: 100%;
   }
+}
+
   
-  /* mobile view */
-  @media (max-width: 768px) {
-    .team-member {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-  
-    .team-info {
-      max-width: 100%;
-    }
-  }
 
 /* iPhone / mobile optimization */
 @media (max-width: 480px) {
@@ -241,36 +245,3 @@ body {
     font-size: 0.9rem;
   }
 }
-
-.profile {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.profile-photo {
-  width: 275px;
-  height: 275px;
-  object-fit: cover;
-  border: 2px solid #ccc;
-}
-
-.profile-info p {
-  margin: 0;
-}
-
-/* Mobile fix */
-@media (@media (max-width: 600px) {
-  .profile {
-    flex-direction: column;   /* stack vertically */
-    align-items: center;      /* center image */
-    text-align: center;       /* center text */
-  }
-}
-
-  .profile-photo {
-    width: 200px;
-    height: 200px;
-  }
-}
-

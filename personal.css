@@ -242,4 +242,15 @@ body {
   }
 }
 
+@media (max-width: 480px) {
+  .profile-photo {
+    border-radius: 8px;
+  }
+
+  .modal-button {
+    display: inline-block;
+    margin-top: 8px;
+  }
+}
+
   

@@ -1,5 +1,4 @@
 let selectedDrink = "";
-let selectedButton = null;
 let expandedCard = null;
 
 function selectDrink(drink, button) {
@@ -30,31 +29,40 @@ function selectDrink(drink, button) {
   }
 }
 
+// Form submission using FormData
+const form = document.getElementById("orderForm");
 
-  
+form.addEventListener("submit", e => {
+  e.preventDefault();
 
-  function submitOrder() {
-    const data = {
-      name: document.getElementById("name").value,
-      drink: selectedDrink,
-      size: document.getElementById("size").value,
-      milk: document.getElementById("milk").value,
-      sweetness: document.getElementById("sweetness").value,
-      notes: document.getElementById("notes").value
-    };
-  
-   fetch("https://script.google.com/macros/s/AKfycbxmtfbQySlMAhzl36eJ99jfNKmf9QwPVJDKCYIC7a4Aq-ZYOmXIT7DQ7YIBk3d6YbZk/exec", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json"
-  },
-  body: JSON.stringify(data)
-})
-
-    .then(response => response.json())
-    .then(res => {
-      if (res.success) alert("Order submitted!");
-      else alert("Something went wrong");
-    })
-    .catch(err => alert("Submission failed"));
+  if (!selectedDrink) {
+    alert("Please select a drink before submitting!");
+    return;
   }
+
+  const data = new FormData(form);
+  data.append("drink", selectedDrink); // add drink from buttons
+
+  fetch("https://script.google.com/macros/s/YOUR_DEPLOY_ID/exec", {
+    method: "POST",
+    body: data
+  })
+  .then(res => res.json())
+  .then(res => {
+    if(res.success) {
+      alert("Order submitted!");
+      form.reset();
+      selectedDrink = "";
+      document.getElementById("selectedDrink").innerText = "No drink selected";
+      if (expandedCard) {
+        expandedCard.classList.remove("expanded");
+        expandedCard.querySelector("button").classList.remove("selected");
+        expandedCard = null;
+      }
+    } else {
+      alert("Error: " + res.error);
+    }
+  })
+  .catch(err => alert("Submission failed: " + err));
+});
+

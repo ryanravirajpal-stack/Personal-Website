@@ -43,15 +43,22 @@ function selectDrink(drink, button) {
       notes: document.getElementById("notes").value
     };
   
-    fetch("https://script.google.com/macros/s/AKfycby64zATH3ny4mb-JpD2HEI4epgWpvPHMr3NvE1TMcXFWqP81lCFaKeitPJ6UiEzBY5K/exec", {
-      method: "POST",
-      body: JSON.stringify(data)
-    })
-    .then(response => response.json())
-    .then(res => {
-      if (res.success) alert("Order submitted!");
-      else alert("Something went wrong");
-    })
-    .catch(err => alert("Submission failed"));
+ 
+fetch("https://script.google.com/macros/s/AKfycby64zATH3ny4mb-JpD2HEI4epgWpvPHMr3NvE1TMcXFWqP81lCFaKeitPJ6UiEzBY5K/exec", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify(data)
+})
+.then(response => response.json())
+.then(res => {
+  if (res.success) alert("Order submitted!");
+  else alert(res.error || "Something went wrong");
+})
+.catch(err => {
+  console.error(err);
+  alert("Submission failed");
+})
   }
-  
+

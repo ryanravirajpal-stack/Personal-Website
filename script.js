@@ -1,4 +1,5 @@
 let selectedDrink = "";
+let selectedButton = null;
 let expandedCard = null;
 
 function selectDrink(drink, button) {
@@ -50,11 +51,6 @@ function submitOrder() {
   )
   .then(() => {
     alert("Order submitted!");
-    document.getElementById("orderForm").reset();
-    selectedDrink = "";
-    expandedCard?.classList.remove("expanded");
-    expandedCard = null;
-    document.getElementById("selectedDrink").innerText = "No drink selected";
   })
   .catch(err => {
     console.error(err);

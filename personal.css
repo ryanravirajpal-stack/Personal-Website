@@ -242,7 +242,11 @@ body {
   }
 }
 
-@media (max-width: 480px) {
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
 
 .profile-photo {
   width: 275px;
@@ -250,23 +254,21 @@ body {
   object-fit: cover;
   border: 2px solid #ccc;
 }
-    .modal-button {
-    display: inline-block;
-    margin-top: 8px;
-  }
+
+.profile-info p {
+  margin: 0;
 }
 
 /* Mobile fix */
-@media (max-width: 480px) {
+@media (max-width: 360px) {
+  .profile {
+    flex-direction: column;
+    text-align: center;
+  }
+
   .profile-photo {
-    width: 80vw;       /* 60% of viewport width */
-    max-width: 220px;  /* hard cap */
-    height: auto;      /* preserve aspect ratio */
+    width: 200px;
+    height: 200px;
   }
 }
 
-  
-
-
-
-  

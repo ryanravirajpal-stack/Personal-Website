@@ -43,10 +43,14 @@ function selectDrink(drink, button) {
       notes: document.getElementById("notes").value
     };
   
-    fetch("https://script.google.com/macros/s/AKfycbx-dbaQglqI516-TX8Xyo1Erq1Dfe7CchTP5HbNpsaMxpbFh1Ph7Pyi4ffsO-EqLA7I/exec", {
-      method: "POST",
-      body: JSON.stringify(data)
-    })
+   fetch("https://script.google.com/macros/s/AKfycbx-.../exec", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify(data)
+})
+
     .then(response => response.json())
     .then(res => {
       if (res.success) alert("Order submitted!");
@@ -54,5 +58,3 @@ function selectDrink(drink, button) {
     })
     .catch(err => alert("Submission failed"));
   }
-
-

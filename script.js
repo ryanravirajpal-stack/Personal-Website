@@ -64,5 +64,5 @@ form.addEventListener("submit", e => {
     }
   })
   .catch(err => alert("Submission failed: " + err));
-});
+})
 

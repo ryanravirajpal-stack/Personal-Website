@@ -1,4 +1,5 @@
 let selectedDrink = "";
+let selectedButton = null;
 let expandedCard = null;
 
 // Toggle drink selection
@@ -45,21 +46,10 @@ form.addEventListener("submit", e => {
     method: "POST",
     body: data
 })
-.then(res => res.json())
-.then(res => {
-    if(res.success) {
-        alert("Order submitted!");
-        form.reset();
-        selectedDrink = "";
-        document.getElementById("selectedDrink").innerText = "No drink selected";
-        if (expandedCard) {
-            expandedCard.classList.remove("expanded");
-            expandedCard.querySelector("button").classList.remove("selected");
-            expandedCard = null;
-        }
-    } else {
-        alert("Error: " + res.error);
-    }
-})
-.catch(err => alert("Submission failed: " + err));
-
+.then(response => response.json())
+    .then(res => {
+      if (res.success) alert("Order submitted!");
+      else alert("Something went wrong");
+    })
+    .catch(err => alert("Submission failed"));
+  }

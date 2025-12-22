@@ -154,10 +154,10 @@ body {
 }
 
 .team-photo {
-  width: 150px;
-  height: 150px;
+  width: 250px;
+  height: 250px;
   object-fit: cover;
-  border-radius: 50%;
+  border-radius: 0%;
   border: 2px solid #ccc;
 }
 

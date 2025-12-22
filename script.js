@@ -43,7 +43,7 @@ form.addEventListener("submit", e => {
   const data = new FormData(form);
   data.append("drink", selectedDrink); // add drink from buttons
 
-  fetch("https://script.google.com/macros/s/AKfycbw2ZNuhnUUDQD2e95klXikj-vfRhlpR2Y2MEkqB1v8yf26NriflJcqEwHlvIdvc_hbG", {
+  fetch("https://script.google.com/macros/s/AKfycbymcHqFSrPeWQhwT33cJSB24yj2D6ItbAPxKsPcHN565882mOtx744FbA-FW4JhAEWl/exec", {
     method: "POST",
     body: data
   })

@@ -41,7 +41,7 @@ form.addEventListener("submit", e => {
   const data = new FormData(form);
   data.append("drink", selectedDrink);
 
-  fetch("https://script.google.com/macros/s/YOUR_DEPLOY_ID/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbzQj5Xk6FxHEAIUbtF8c5oeU5JSrrd509rtobezAQOe39iMF69s2P27Kcl6LQnY6ci_/exec", {
     method: "POST",
     body: data
   })

@@ -3,21 +3,66 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Drink Menu ☕</title>
+  <title>Drink Menu</title>
   <link rel="stylesheet" href="menu.css" />
 </head>
 <body>
 
 <main class="container">
   <section class="menu">
-    <h1>☁️ Cozy Drink Menu ☁️</h1>
+    <h1>Drink Menu</h1>
 
-    <input id="name" placeholder="Your name 💖" />
+    <input id="name" placeholder="Your name" />
+
+    <section>
+        <h2>Alcoholic</h2>
 
     <div class="drinks">
-        <button onclick="selectDrink('Matcha Latte', this)">🍵 Matcha Latte</button>
-        <button onclick="selectDrink('Iced Coffee', this)">🧊 Iced Coffee</button>
-        <button onclick="selectDrink('Chai Latte', this)">🫖 Chai Latte</button>
+
+        <div class="drink-card">
+          <button onclick="selectDrink('Tequila Sunrise', this)">
+            Tequila Sunrise
+          </button>
+          <div class="ingredients">
+            Tequila, Orange Juice, Grenadine, Ice
+          </div>
+        </div>
+      
+        <div class="drink-card">
+          <button onclick="selectDrink('Malibu Bay Breeze', this)">
+            Malibu Bay Breeze
+          </button>
+          <div class="ingredients">
+            Tequila, Coconut water, Cranberry juice, Ice
+          </div>
+        </div>
+      
+        <div class="drink-card">
+          <button onclick="selectDrink('Dirty Shirley', this)">
+            Dirty Shirley
+          </button>
+          <div class="ingredients">
+            Vodka, Ginger ale, Lemon juice, Lime juice, Grenadine, Ice
+          </div>
+        </div>
+
+        </section>
+
+        
+        <section>
+            <h2>Non-Alcoholic</h2>
+    
+        <div class="drinks">
+    
+            <div class="drink-card">
+              <button onclick="selectDrink('London Fog', this)">
+                London Fog
+              </button>
+              <div class="ingredients">
+                Earl Grey Tea, Steamed Milk, Vanilla Extract, Honey
+              </div>
+            </div>
+      
       </div>
 
     <div class="customize">
@@ -25,30 +70,32 @@
 
       <div class="grid">
         <select id="size">
-          <option>Small</option>
-          <option>Medium</option>
-          <option>Large</option>
+          <option>Half-a-shot</option>
+          <option>Single</option>
+          <option>Double</option>
+          <option>None</option>
         </select>
 
         <select id="milk">
-          <option>Whole Milk</option>
-          <option>Oat Milk</option>
-          <option>Almond Milk</option>
+          <option>Less Ice</option>
+          <option>Iced as made</option>
+          <option>More Ice</option>
+          <option>None</option>
         </select>
 
         <select id="sweetness">
-          <option>0%</option>
-          <option>50%</option>
-          <option>100%</option>
+          <option>Less Sweet</option>
+          <option>As Prepared</option>
+          <option>More Sweet</option>
         </select>
       </div>
 
-      <textarea id="notes" placeholder="Extra notes ✨"></textarea>
+      <textarea id="notes" placeholder="Extra notes"></textarea>
     </div>
 
     <div class="order">
       <h2 id="selectedDrink">No drink selected</h2>
-      <button onclick="submitOrder()">Submit Order 💌</button>
+      <button onclick="submitOrder()">Submit Order </button>
     </div>
   </section>
 </main>
@@ -56,4 +103,5 @@
 <script src="script.js"></script>
 </body>
 </html>
+
 

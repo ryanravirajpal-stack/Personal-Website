@@ -1,16 +1,15 @@
 let selectedDrink = "";
 let expandedCard = null;
 
+// Toggle drink selection
 function selectDrink(drink, button) {
   const card = button.parentElement;
 
-  // Collapse previous
   if (expandedCard && expandedCard !== card) {
     expandedCard.classList.remove("expanded");
     expandedCard.querySelector("button").classList.remove("selected");
   }
 
-  // Toggle current
   const isExpanded = card.classList.contains("expanded");
 
   if (isExpanded) {
@@ -24,12 +23,11 @@ function selectDrink(drink, button) {
     button.classList.add("selected");
     selectedDrink = drink;
     expandedCard = card;
-    document.getElementById("selectedDrink").innerText =
-      `Selected: ${drink}`;
+    document.getElementById("selectedDrink").innerText = `Selected: ${drink}`;
   }
 }
 
-// Form submission using FormData
+// Form submission
 const form = document.getElementById("orderForm");
 
 form.addEventListener("submit", e => {
@@ -41,9 +39,9 @@ form.addEventListener("submit", e => {
   }
 
   const data = new FormData(form);
-  data.append("drink", selectedDrink); // add drink from buttons
+  data.append("drink", selectedDrink);
 
-  fetch("https://script.google.com/macros/s/AKfycbymcHqFSrPeWQhwT33cJSB24yj2D6ItbAPxKsPcHN565882mOtx744FbA-FW4JhAEWl/exec", {
+  fetch("https://script.google.com/macros/s/YOUR_DEPLOY_ID/exec", {
     method: "POST",
     body: data
   })
@@ -64,5 +62,4 @@ form.addEventListener("submit", e => {
     }
   })
   .catch(err => alert("Submission failed: " + err));
-})
-
+});

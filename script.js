@@ -31,34 +31,43 @@ function selectDrink(drink, button) {
 }
 
 
-  
-
   function submitOrder() {
-    const data = {
-      name: document.getElementById("name").value,
-      drink: selectedDrink,
-      size: document.getElementById("size").value,
-      milk: document.getElementById("milk").value,
-      sweetness: document.getElementById("sweetness").value,
-      notes: document.getElementById("notes").value
-    };
-  
- 
-fetch("https://script.google.com/macros/s/AKfycbxcqRe5cayp4dn7JX-SyRgZPjiQf1i2rlXskNmhQNjK94a8A5SF6ysZB1j7RgUDU18B/exec", {
-  method: "POST",
-  headers: {
-    "Content-Type": "application/json"
-  },
-  body: JSON.stringify(data)
-})
-.then(response => response.json())
-.then(res => {
-  if (res.success) alert("Order submitted!");
-  else alert(res.error || "Something went wrong");
-})
-.catch(err => {
-  console.error(err);
-  alert("Submission failed");
-})
-  }
+  const order = {
+    name: document.getElementById("name").value,
+    drink: selectedDrink,
+    size: document.getElementById("size").value,
+    milk: document.getElementById("milk").value,
+    sweetness: document.getElementById("sweetness").value,
+    notes: document.getElementById("notes").value
+  };
 
+  fetch("https://script.google.com/macros/s/AKfycbyc5zOJFe_iLJnNOuT7KjVXV0XXiwUs-DpW1M-FP4-fQipyd_IMUFXIB4zaPNOutyh0/exec", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(order)
+  })
+  .then(res => res.text()) // ← ALWAYS read text first
+  .then(text => {
+    console.log("Server response:", text);
+
+    let data;
+    try {
+      data = JSON.parse(text);
+    } catch {
+      alert("Server did not return valid JSON");
+      return;
+    }
+
+    if (data.success) {
+      alert("Order submitted!");
+    } else {
+      alert(data.error || "Something went wrong");
+    }
+  })
+  .catch(err => {
+    console.error(err);
+    alert("Submission failed");
+  });
+}

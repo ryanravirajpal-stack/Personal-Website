@@ -260,7 +260,7 @@ body {
 }
 
 /* Mobile fix */
-@media (max-width: 480px) {
+@media (@media (max-width: 600px) {
   .profile {
     flex-direction: column;   /* stack vertically */
     align-items: center;      /* center image */

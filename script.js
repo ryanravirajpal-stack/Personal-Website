@@ -44,7 +44,7 @@ function selectDrink(drink, button) {
     notes: document.getElementById("notes").value
   };
 
-  fetch("https://script.google.com/macros/s/AKfycbwK5906MKN8F9d54KG-qM-Fosm3yuOIZc0nDt0_huM0seN-QvZo3N9dLZEdk0NB5rHK/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbzj7yGlX7qlsbXFt0dnqUZ_a90xiv-aTkjQ7YpkVTIx76W2Bb8CmpQ0PKZGStum8FS5/exec", {
   method: "POST",
   headers: { "Content-Type": "application/json" },
   body: JSON.stringify(order)

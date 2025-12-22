@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ryan R. Rajpal - Personal</title>
+  <link rel="stylesheet" href="personal.css" />
+  <link rel="stylesheet" href="menu.css" />
+</head>
+
+<body>
+    
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="Bar.html">Bartending</a>
+    <a href="https://pplinstitute.org" target="_blank">PPL Institute</a>
+  </nav>
+
+<main class="container">
+  <section class="menu">
+    <h1>Drink Menu</h1>
+
+    <form id="orderForm">
+        <input id="name" name="name" placeholder="Your name" />
+      
+        <section>
+            <h2>Alcoholic</h2>
+      
+            <div class="drinks">
+                <div class="drink-card">
+                  <button type="button" onclick="selectDrink('Tequila Sunrise', this)">
+                    Tequila Sunrise
+                  </button>
+                  <div class="ingredients">
+                    Tequila, Orange Juice, Grenadine, Ice
+                  </div>
+                </div>
+              
+                <div class="drink-card">
+                  <button type="button" onclick="selectDrink('Malibu Bay Breeze', this)">
+                    Malibu Bay Breeze
+                  </button>
+                  <div class="ingredients">
+                    Tequila, Coconut water, Cranberry juice, Ice
+                  </div>
+                </div>
+              
+                <div class="drink-card">
+                  <button type="button" onclick="selectDrink('Dirty Shirley', this)">
+                    Dirty Shirley
+                  </button>
+                  <div class="ingredients">
+                    Vodka, Ginger ale, Lemon juice, Lime juice, Grenadine, Ice
+                  </div>
+                </div>
+            </div>
+        </section>
+      
+        <section>
+            <h2>Non-Alcoholic</h2>
+            <div class="drinks">
+                <div class="drink-card">
+                  <button type="button" onclick="selectDrink('London Fog', this)">
+                    London Fog
+                  </button>
+                  <div class="ingredients">
+                    Earl Grey Tea, Steamed Milk, Vanilla Extract, Honey
+                  </div>
+                </div>
+            </div>
+        </section>
+      
+        <div class="customize">
+          <h2>Customize</h2>
+          <div class="grid">
+            <select id="size" name="size">
+              <option>Half-a-shot</option>
+              <option>Single</option>
+              <option>Double</option>
+              <option>None</option>
+            </select>
+      
+            <select id="milk" name="milk">
+              <option>Less Ice</option>
+              <option>Iced as made</option>
+              <option>More Ice</option>
+              <option>None</option>
+            </select>
+      
+            <select id="sweetness" name="sweetness">
+              <option>Less Sweet</option>
+              <option>As Prepared</option>
+              <option>More Sweet</option>
+            </select>
+          </div>
+      
+          <textarea id="notes" name="notes" placeholder="Extra notes"></textarea>
+        </div>
+      
+        <div class="order">
+          <h2 id="selectedDrink">No drink selected</h2>
+          <button type="submit">Submit Order</button>
+        </div>
+      </form>
+      
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
+

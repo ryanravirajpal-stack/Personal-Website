@@ -39,7 +39,7 @@ function selectDrink(drink, button) {
     name: document.getElementById("name").value,
     drink: selectedDrink,
     size: document.getElementById("size").value,
-    milk: document.getElementById("milk").value,
+    ice: document.getElementById("ice").value,
     sweetness: document.getElementById("sweetness").value,
     notes: document.getElementById("notes").value
   };

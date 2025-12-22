@@ -1,3 +1,5 @@
+
+// Drink Selection
 let selectedDrink = "";
 let selectedButton = null;
 let expandedCard = null;
@@ -5,13 +7,13 @@ let expandedCard = null;
 function selectDrink(drink, button) {
   const card = button.parentElement;
 
-  // Collapse previous
+  // Collapse
   if (expandedCard && expandedCard !== card) {
     expandedCard.classList.remove("expanded");
     expandedCard.querySelector("button").classList.remove("selected");
   }
 
-  // Toggle current
+  // Toggle
   const isExpanded = card.classList.contains("expanded");
 
   if (isExpanded) {
@@ -30,6 +32,7 @@ function selectDrink(drink, button) {
   }
 }
 
+//Order Submission
 
   function submitOrder() {
   const order = {
@@ -41,33 +44,21 @@ function selectDrink(drink, button) {
     notes: document.getElementById("notes").value
   };
 
-  fetch("https://script.google.com/macros/s/AKfycbyc5zOJFe_iLJnNOuT7KjVXV0XXiwUs-DpW1M-FP4-fQipyd_IMUFXIB4zaPNOutyh0/exec", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify(order)
-  })
-  .then(res => res.text()) // ← ALWAYS read text first
-  .then(text => {
-    console.log("Server response:", text);
-
-    let data;
-    try {
-      data = JSON.parse(text);
-    } catch {
-      alert("Server did not return valid JSON");
-      return;
-    }
-
+  fetch("https://script.google.com/macros/s/AKfycbwK5906MKN8F9d54KG-qM-Fosm3yuOIZc0nDt0_huM0seN-QvZo3N9dLZEdk0NB5rHK/exec", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify(order)
+})
+  .then(res => res.json())  // <-- parse JSON directly
+  .then(data => {
     if (data.success) {
-      alert("Order submitted!");
+      alert("Order submitted! Row: " + data.row);
     } else {
-      alert(data.error || "Something went wrong");
+      alert("Error: " + data.error);
     }
   })
   .catch(err => {
     console.error(err);
     alert("Submission failed");
-  });
-}
+  })
+  }

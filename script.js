@@ -43,7 +43,7 @@ function selectDrink(drink, button) {
       notes: document.getElementById("notes").value
     };
   
-    fetch("https://script.google.com/macros/s/AKfycbzD8Ro1uorWY9gTFk0FbvGSu9g9jsU8VU7buZPsoNHmCncmuX3QZpAImfcFdYXTmaE5/exec", {
+    fetch("https://script.google.com/macros/s/AKfycbxG-WTC9r9aNzBir9G5cxJUZy6aN2er0eBBm6lYbytozaNeitmLehHc6AFFJxXGaf9y/exec", {
       method: "POST",
       body: JSON.stringify(data)
     })

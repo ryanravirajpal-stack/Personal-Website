@@ -56,39 +56,3 @@ function selectDrink(drink, button) {
   }
 
 
-function doPost(e) {
-  try {
-    const sheet = SpreadsheetApp
-      .getActiveSpreadsheet()
-      .getSheetByName("drink orders"); // <-- match your sheet name
-
-    if (!e || !e.postData || !e.postData.contents) {
-      throw new Error("No POST data received");
-    }
-
-    const data = JSON.parse(e.postData.contents);
-
-    sheet.appendRow([
-      new Date(),          // Timestamp
-      data.name || "",
-      data.drink || "",
-      data.size || "",
-      data.milk || "",
-      data.sweetness || "",
-      data.notes || ""
-    ]);
-
-    return ContentService
-      .createTextOutput(JSON.stringify({ success: true }))
-      .setMimeType(ContentService.MimeType.JSON);
-
-  } catch (error) {
-    return ContentService
-      .createTextOutput(
-        JSON.stringify({ success: false, error: error.message })
-      )
-      .setMimeType(ContentService.MimeType.JSON);
-  }
-}
-
-  

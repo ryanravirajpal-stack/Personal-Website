@@ -44,7 +44,7 @@ function selectDrink(drink, button) {
     };
   
  
-fetch("https://script.google.com/macros/s/AKfycbzmd3vJK94FerztHrijbaPBWpmifZ15WIxCgKU8fi94W4hntZ0o2Z0X6KSD4Qwsns1A/exec", {
+fetch("https://script.google.com/macros/s/AKfycbyIK6Lb8cKMHbAnzPb4hARVRMBrtDRQx56mp1fwEe3c4Umn9YAJNhB0J1J3tavGBxJu/exec", {
   method: "POST",
   headers: {
     "Content-Type": "application/json"

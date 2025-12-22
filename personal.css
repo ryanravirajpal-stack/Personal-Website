@@ -259,8 +259,8 @@ body {
 /* Mobile fix */
 @media (max-width: 480px) {
   .profile-photo {
-    width: 60vw;       /* 60% of viewport width */
-    max-width: 180px;  /* hard cap */
+    width: 80vw;       /* 60% of viewport width */
+    max-width: 220px;  /* hard cap */
     height: auto;      /* preserve aspect ratio */
   }
 }

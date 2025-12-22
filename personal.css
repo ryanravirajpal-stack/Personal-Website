@@ -243,14 +243,30 @@ body {
 }
 
 @media (max-width: 480px) {
-  .profile-photo {
-    border-radius: 8px;
-  }
 
-  .modal-button {
+.profile-photo {
+  width: 275px;
+  height: 275px;
+  object-fit: cover;
+  border: 2px solid #ccc;
+}
+    .modal-button {
     display: inline-block;
     margin-top: 8px;
   }
 }
+
+/* Mobile fix */
+@media (max-width: 480px) {
+  .profile-photo {
+    width: 60vw;       /* 60% of viewport width */
+    max-width: 180px;  /* hard cap */
+    height: auto;      /* preserve aspect ratio */
+  }
+}
+
+  
+
+
 
   

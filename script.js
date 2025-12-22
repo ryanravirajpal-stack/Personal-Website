@@ -41,25 +41,25 @@ form.addEventListener("submit", e => {
   const data = new FormData(form);
   data.append("drink", selectedDrink);
 
-  fetch("https://script.google.com/macros/s/https://script.google.com/macros/s/AKfycbw0Vwblrff87Y_TQh7Fqiz0N1AFIgGcCWjaDJB3uLcRkceKrpRHmP00JIIh7P2luk1R/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbw0Vwblrff87Y_TQh7Fqiz0N1AFIgGcCWjaDJB3uLcRkceKrpRHmP00JIIh7P2luk1R/exec", {
     method: "POST",
     body: data
-  })
-  .then(res => res.json())
-  .then(res => {
+})
+.then(res => res.json())
+.then(res => {
     if(res.success) {
-      alert("Order submitted!");
-      form.reset();
-      selectedDrink = "";
-      document.getElementById("selectedDrink").innerText = "No drink selected";
-      if (expandedCard) {
-        expandedCard.classList.remove("expanded");
-        expandedCard.querySelector("button").classList.remove("selected");
-        expandedCard = null;
-      }
+        alert("Order submitted!");
+        form.reset();
+        selectedDrink = "";
+        document.getElementById("selectedDrink").innerText = "No drink selected";
+        if (expandedCard) {
+            expandedCard.classList.remove("expanded");
+            expandedCard.querySelector("button").classList.remove("selected");
+            expandedCard = null;
+        }
     } else {
-      alert("Error: " + res.error);
+        alert("Error: " + res.error);
     }
-  })
-  .catch(err => alert("Submission failed: " + err));
-});
+})
+.catch(err => alert("Submission failed: " + err));
+

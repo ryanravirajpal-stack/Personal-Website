@@ -1,3 +1,35 @@
+let selectedDrink = "";
+let selectedButton = null;
+let expandedCard = null;
+
+function selectDrink(drink, button) {
+  const card = button.parentElement;
+
+  // Collapse previous
+  if (expandedCard && expandedCard !== card) {
+    expandedCard.classList.remove("expanded");
+    expandedCard.querySelector("button").classList.remove("selected");
+  }
+
+  // Toggle current
+  const isExpanded = card.classList.contains("expanded");
+
+  if (isExpanded) {
+    card.classList.remove("expanded");
+    button.classList.remove("selected");
+    selectedDrink = "";
+    expandedCard = null;
+    document.getElementById("selectedDrink").innerText = "No drink selected";
+  } else {
+    card.classList.add("expanded");
+    button.classList.add("selected");
+    selectedDrink = drink;
+    expandedCard = card;
+    document.getElementById("selectedDrink").innerText =
+      `Selected: ${drink}`;
+  }
+}
+
 function submitOrder() {
   if (!selectedDrink) {
     alert("Please select a drink first.");

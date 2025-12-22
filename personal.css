@@ -260,11 +260,13 @@ body {
 }
 
 /* Mobile fix */
-@media (max-width: 360px) {
+@media (max-width: 480px) {
   .profile {
-    flex-direction: column;
-    text-align: center;
+    flex-direction: column;   /* stack vertically */
+    align-items: center;      /* center image */
+    text-align: center;       /* center text */
   }
+}
 
   .profile-photo {
     width: 200px;

@@ -42,7 +42,8 @@ function submitOrder() {
 
   fetch("https://script.google.com/macros/s/AKfycbzaUdqeYF-LPM4WPL-rwu17sxxkwRF9Q6QEn2HjBFX0eKTRE56RHrXJhHZTR3IcUche/exec", {
     method: "POST",
-    body: new FormData(form)
+    body: new FormData(form),
+  mode: "no-cors" 
   })
   .then(() => {
     alert("Order submitted!");

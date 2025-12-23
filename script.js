@@ -40,7 +40,7 @@ function submitOrder() {
 
   const form = document.getElementById("orderForm");
 
-  fetch("https://script.google.com/macros/s/AKfycbzaUdqeYF-LPM4WPL-rwu17sxxkwRF9Q6QEn2HjBFX0eKTRE56RHrXJhHZTR3IcUche/exec", {
+  fetch("https://script.google.com/macros/s/AKfycbx90tWyTac44ZEIcuPjX1DgmvMe_0rrp8oUi8rUXVvQolttQvBpuE0KCmPBIde-0go/exec", {
     method: "POST",
     body: new FormData(form),
   mode: "no-cors" 

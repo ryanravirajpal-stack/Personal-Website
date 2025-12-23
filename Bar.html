@@ -23,25 +23,26 @@
         <input id="name" name="name" placeholder="Your name" />
 
         <!-- Original Concoctions -->
-        <section>
-          <h2>Original Concoctions</h2>
-          <div class="drinks">         
-            <div class="drink-card">
-              <button type="button" onclick="selectDrink('James Chocolate Rum', this)">
-                James Chocolate Rum
-              </button>
-              <div class="ingredients">
-               Dark Rum, Rum Chatta, Hot Chocolate
-              </div>
-            </div>
-          </div>
-        </section>
+        <input type="hidden" name="Drink" id="drink">
+
+<section>
+  <h2>Original Concoctions</h2>
+  <div class="drinks">         
+    <div class="drink-card">
+      <button type="button" onclick="selectDrink('James Chocolate Rum', this)">
+        James Chocolate Rum
+      </button>
+      <div class="ingredients">
+        Dark Rum, Rum Chatta, Hot Chocolate
+      </div>
+    </div>
+  </div>
+</section>
+
 
         <!-- Cocktails -->
         <section>
           <h2>Cocktails</h2>
-          <div class="drinks">
-           
             <div class="drinks">
                 <div class="drink-card">
                   <button type="button" onclick="selectDrink('Tequila Sunrise', this)">
@@ -129,23 +130,23 @@
           <h2>Customize</h2>
           <div class="grid">
             <select id="size" name="size">
-              <option>Half-a-shot</option>
-              <option>Single</option>
-              <option>Double</option>
-              <option>None</option>
+              <option value="Half-a-shot">Half-a-shot</option>
+              <option value="Single">Single</option>
+              <option value="Double">Double</option>
+              <option value="None">None</option>
             </select>
 
             <select id="ice" name="ice">
-              <option>Less Ice</option>
-              <option>Iced as made</option>
-              <option>More Ice</option>
-              <option>None</option>
+              <option value="Less Ice">Less Ice</option>
+              <option value="Iced as made">Iced as made</option>
+              <option value="More Ice">More Ice</option>
+              <option value="None">None</option>
             </select>
 
             <select id="sweetness" name="sweetness">
-              <option>Less Sweet</option>
-              <option>As Prepared</option>
-              <option>More Sweet</option>
+              <option value="Less Sweet">Less Sweet</option>
+              <option value="As Prepared">As Prepared</option>
+              <option value="More Sweet">More Sweet</option>
             </select>
           </div>
 

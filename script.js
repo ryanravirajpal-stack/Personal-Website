@@ -2,6 +2,7 @@ let selectedDrink = "";
 let selectedButton = null;
 let expandedCard = null;
 
+
 function selectDrink(drink, button) {
   const card = button.parentElement;
 
@@ -17,49 +18,41 @@ function selectDrink(drink, button) {
     button.classList.remove("selected");
     selectedDrink = "";
     expandedCard = null;
+    document.getElementById("drink").value = "";
     document.getElementById("selectedDrink").innerText = "No drink selected";
   } else {
     card.classList.add("expanded");
     button.classList.add("selected");
     selectedDrink = drink;
     expandedCard = card;
+    document.getElementById("drink").value = drink; // ← AND THIS
     document.getElementById("selectedDrink").innerText =
       `Selected: ${drink}`;
   }
 }
 
- function submitOrder() {
-    if (!selectedDrink) {
-      alert("Please select a drink first.");
-      return;
-    }
-  
-    const form = document.createElement("form");
-    form.action = "https://docs.google.com/forms/d/e/1FAIpQLSdaLCstrUCUKr5QQwbfx_xQ4P31ERCj3vCjt4WEy9SSfPMuBA/formResponse";
-    form.method = "POST";
-    form.target = "_blank"; // optional: open in new tab
-  
-    const fields = {
-      "entry.1208397499": document.getElementById("name").value,
-      "entry.178730096": selectedDrink,
-      "entry.1117680067": document.getElementById("size").value,
-      "entry.1576239071": document.getElementById("ice").value,
-      "entry.897010592": document.getElementById("sweetness").value,
-      "entry.1899689055": document.getElementById("notes").value
-    };
-  
-    for (const [key, value] of Object.entries(fields)) {
-      const input = document.createElement("input");
-      input.type = "hidden";
-      input.name = key;
-      input.value = value;
-      form.appendChild(input);
-    }
-  
-    document.body.appendChild(form);
-    form.submit();
-    document.body.removeChild(form);
-  
-    alert("Order submitted!");
+
+function submitOrder() {
+  if (!document.getElementById("drink").value) {
+    alert("Please select a drink first.");
+    return;
   }
+
+  const form = document.getElementById("orderForm");
+
+  fetch("https://script.google.com/macros/s/https://script.google.com/macros/s/AKfycbzMNVM2KOMHVhd2-tJ4FZ1r4ftQe_ltOfmxBXIJlI-5Nv3kQ4Oa1nfly4zMQmjkuICv/exec", {
+    method: "POST",
+    body: new FormData(form)
+  })
+  .then(() => {
+    alert("Order submitted!");
+    form.reset();
+    document.getElementById("selectedDrink").innerText = "No drink selected";
+  })
+  .catch(err => {
+    console.error(err);
+    alert("Something went wrong.");
+  });
+}
+
 

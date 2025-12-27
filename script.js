@@ -1,3 +1,5 @@
+<script>
+
 let selectedDrink = "";
 let selectedButton = null;
 let expandedCard = null;
@@ -56,4 +58,4 @@ function submitOrder() {
   });
 }
 
-
+</script>

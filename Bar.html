@@ -15,21 +15,59 @@
     <a href="https://pplinstitute.org" target="_blank">PPL Institute</a>
   </nav>
 
+ 
   <main class="container">
     <section class="menu">
       <h1>Drink Menu</h1>
 
       <p>
-        Orders take ~ 2 seconds to submit; please do not double-click.
+        1. Orders take about 2 seconds to submit; please do not double-click the  "Submit Order" button.
+        2. Please click the drink name rather than the image to select a drink.
       </p>
      <h2>Please insert your name:</h2>
     
-
+<p> </p>
       <form id="orderForm">
         <input id="name" name="name" placeholder="Your name" />
 
+        <p> </p>
+
+        <!-- Customize -->
+        <div class="customize">
+          <h2>Customize your drink</h2>
+          <div class="grid">
+            <select id="size" name="size">
+              <option value="Custom Alcohol">Customize Alchohol</option>
+              <option value="As Made">As Made</option>
+              <option value="Half-a-shot">Half-a-shot</option>
+              <option value="Single">Single</option>
+              <option value="Double">Double</option>
+              <option value="None">None</option>
+            </select>
+
+            <select id="ice" name="ice">
+              <option value="Custom Ice">Customize Ice</option>
+              <option value="As Made">As Made</option>
+              <option value="Less Ice">Less Ice</option>
+              <option value="More Ice">More Ice</option>
+              <option value="None">None</option>
+            </select>
+
+            <select id="sweetness" name="sweetness">
+              <option value="Custom Sweetness">Customize Sweet</option>
+              <option value="As Made">As Made</option>
+              <option value="Less Sweet">Less Sweet</option>
+              <option value="More Sweet">More Sweet</option>
+            </select>
+          </div>
+<div>
+          <textarea id="notes" name="notes" placeholder="Extra notes"></textarea>
+        </div>
+
         <!-- Original Concoctions -->
         <input type="hidden" name="drink" id="drink">
+        
+        <p></p>
 
 <section>
   <h2>Original Concoctions</h2>
@@ -45,6 +83,7 @@
   </div>
 </section>
 
+<p> </p>
 
         <!-- Cocktails -->
         <section>
@@ -52,6 +91,7 @@
 
           <div class="drinks">
             <div class="drink-card">
+              <img src="cosmopolitan.png" class="drink-image" alt="Cosmopolitan">
                   <button type="button" onclick="selectDrink('Cosmopolitan', this)">
                     Cosmopolitan
                   </button>
@@ -64,6 +104,7 @@
 
   
                 <div class="drink-card">
+                  <img src="tequilasunrise.png" class="drink-image" alt="Tequila Sunrise">
                   <button type="button" onclick="selectDrink('Tequila Sunrise', this)">
                     Tequila Sunrise
                   </button>
@@ -74,6 +115,7 @@
               
  
                 <div class="drink-card">
+                  <img src="malibubaybreeze.png" class="drink-image" alt="malibubaybreeze">
                   <button type="button" onclick="selectDrink('Malibu Bay Breeze', this)">
                     Malibu Bay Breeze
                   </button>
@@ -82,18 +124,28 @@
                   </div>
                 </div>
               
+
+                <!-- this is how we do it-->
                 <div class="drink-card">
-                  <button type="button" onclick="selectDrink('Dirty Shirley', this)">
+                  <img src="dirtyshirley.png" class="drink-image" alt="Dirty Shirley">
+                
+                  <button
+                    type="button"
+                    onclick="selectDrink('Dirty Shirley', this)"
+                  >
                     Dirty Shirley
                   </button>
+                
                   <div class="ingredients">
                     Vodka, Ginger Ale, Lemon Juice, Lime Juice, Grenadine, Ice
                   </div>
                 </div>
 
+                  <!-- this is how we do it-->
 
                 
               <div class="drink-card">
+                <img src="midorisour.png" class="drink-image" alt="Midori Sour">
                   <button type="button" onclick="selectDrink('Midori Sour', this)">
                     Midori Sour
                   </button>
@@ -105,6 +157,7 @@
               
 
                  <div class="drink-card">
+                  <img src="margarita.png" class="drink-image" alt="Margarita">
                   <button type="button" onclick="selectDrink('Margarita', this)">
                     Margarita
                   </button>
@@ -114,9 +167,21 @@
                    </div>
 
 
+                   <div class="drink-card">
+                    <img src="whiskeysour.png" class="drink-image" alt="Whiskey Sour">
+                    <button type="button" onclick="selectDrink('Whiskey Sour', this)">
+                      Whiskey Sour
+                    </button>
+                    <div class="ingredients">
+                      Whiskey, Simple Syrup, Lemon Juice, Ice
+                    </div>
+                  </div>
+
+
 
  
                 <div class="drink-card">
+                  <img src="whitecranberrymule.png" class="drink-image" alt="White Cranberry Mule">
                   <button type="button" onclick="selectDrink('White Cranberry Mule', this)">
                     White Cranberry Mule
                   </button>
@@ -128,6 +193,7 @@
 
                   
                  <div class="drink-card">
+                  <img src="whiterussian.png" class="drink-image" alt="White Russian">
                   <button type="button" onclick="selectDrink('White Russian', this)">
                     White Russian
                   </button>
@@ -148,11 +214,14 @@
             </div>
         </section>
 
+        <p> </p>
+
         <!-- Non-Alcoholic -->
         <section>
           <h2>Non-Alcoholic</h2>
           <div class="drinks">
                 <div class="drink-card">
+                  <img src="dirtyshirley.png" class="drink-image" alt="Dirty Shirley">
                   <button type="button" onclick="selectDrink('Shirley Temple', this)">
                     Shirley Temple
                   </button>
@@ -162,6 +231,7 @@
                 </div>
           
             <div class="drink-card">
+              <img src="londonfog.png" class="drink-image" alt="London Fog">
                   <button type="button" onclick="selectDrink('London Fog', this)">
                     London Fog
                   </button>
@@ -171,6 +241,7 @@
                 </div>
 
                 <div class="drink-card">
+                  <img src="matchalatte.png" class="drink-image" alt="Matcha Latte">
                   <button type="button" onclick="selectDrink('Matcha Latte', this)">
                     Matcha Latte
                   </button>
@@ -180,38 +251,7 @@
                 </div>
           </div>
         </section>
-
-            <!-- Customize -->
-            <div class="customize">
-              <h2>Customize</h2>
-              <div class="grid">
-                <select id="size" name="size">
-                  <option value="Custom Alcohol">Custom Alchohol</option>
-                  <option value="As Made">As Made</option>
-                  <option value="Half-a-shot">Half-a-shot</option>
-                  <option value="Single">Single</option>
-                  <option value="Double">Double</option>
-                  <option value="None">None</option>
-                </select>
-    
-                <select id="ice" name="ice">
-                  <option value="Custom Ice">Custom Ice</option>
-                  <option value="As Made">As Made</option>
-                  <option value="Less Ice">Less Ice</option>
-                  <option value="More Ice">More Ice</option>
-                  <option value="None">None</option>
-                </select>
-    
-                <select id="sweetness" name="sweetness">
-                  <option value="Custom Sweetness">Custom Sweet</option>
-                  <option value="As Made">As Made</option>
-                  <option value="Less Sweet">Less Sweet</option>
-                  <option value="More Sweet">More Sweet</option>
-                </select>
-              </div>
-    <div>
-              <textarea id="notes" name="notes" placeholder="Extra notes"></textarea>
-            </div>
+<p></p>
     
             <!-- Submit -->
             <div class="order">

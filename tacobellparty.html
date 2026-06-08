@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+          <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ryan R. Rajpal - Taco Bell Party</title>
+  <link rel="stylesheet" href="personal.css" />
+  <link rel="stylesheet" href="menu.css" />
+</head>
+
+<body>
+      <nav>
+    <a href="index.html">Home</a>
+    <a href="tacobellparty.html">Taco Bell Party</a>
+    <a href="Bar.html">Bartending</a>
+    <a href="https://pplinstitute.org" target="_blank">PPL Institute</a>
+  </nav>
+
+    <main>
+        
+        <h1> Taco Bell Party RSVP Form</h1>
+        <p>
+            Please fill out the form below and indicate whether you will or will not be attending the 
+            Taco Bell Party on <b>Saturday, July 25, 2026, from 5 PM to 10:30 PM</b>. If you will not be attending, please indicate 
+            "Not Attending" and submit the form. If you are attending, please indicate "Attending" and 
+            fill out the rest of the form so that adequate preparation can be made. <b> Please RSVP by Friday, July 10, 2026 @ 11:59 PM.</b>
+        </p>
+
+        <form id="rsvpForm">
+            <label for="name">Please enter your First and Last name.</label>
+            <input type="text" id="name" name="name" required />
+
+            <label for="attendance">Will you be attending?</label>
+            <select id="attendance" name="attendance" required>
+                <option value="">Select...</option>
+                <option value="attending">Attending</option>
+                <option value="not_attending">Not Attending</option>
+            </select>
+
+            <p>  </p>
+
+       <p>For your convenience, we have provided a map of the Taco Bell Party location below. </p>
+         <p>  </p>
+
+             <div class="mapimage">
+            <img src="map.png" alt="Taco Bell Party Map">
+        </div>
+
+                    <p>  </p>
+
+
+            <h2>Please note that as the name implies, Taco Bell will be catered. The following
+                questions are concerned with catering food and beverages.</h2>
+
+            <p>  </p>
+
+            <div id="foodInfo">
+                <label for="foodpreferences">Please indicate what your food preferences are.</label>
+                 <select id="foodpreferences" name="foodpreferences" >
+                <option value="">Select...</option>
+                <option value="Vegetarian">Vegetarian</option>
+                <option value="Beef">Beef</option>
+                <option value="Chicken">Chicken</option>
+                </select>
+                </div>
+
+                <P> </P>
+            <div id="bajaInfo">
+                <label for="bajablastpreferences">Please indicate whether or not you would like a Baja Blast Freeze.</label>
+                 <select id="bajablastpreferences" name="bajablastpreferences" >
+                <option value="">Select...</option>
+                <option value="yes">Yes</option>
+                <option value="no">No</option>
+                </select>
+            </div>
+
+            <p> </p>
+
+            <h2>Regarding Alcohol</h2>
+
+            <p> <b>IF YOU ARE DRINKING</b>, please note that there is NOT an open bar, as that would be far 
+too expensive. As such, each person will be provided with THREE (3) drink tickets, not including 
+ONE (1) seperate shot voucher and the ONE (1) spiked Baja Blast Freeze – if you indicated for one.
+</p>
+<p> This is to ensure that everyone has a good time within healthy and responsible limits.
+    There are also a number of people who will not use all their tickets, or any of them; if you 
+    would like to use more than your allotted number of drink tickets, please feel free to socialize and ask around to see if anyone has any extra tickets they are not using. Regardless, everyone will be capped
+    at FIVE (5) cocktails and TWO (2) shots. <b>As everyone is an adult, I trust that you will know your limits
+        and drink (or whatever else) responsibly. </b>
+</p>
+    <p>Note: A selection of drinks from the "Bartending" page will be available during the party. 
+        While not yet finalized, you can familiarize yourself with potential drinks by visiting the <a href="Bar.html">Bartending</a> page.
+    </p>
+            <div id="bajaalcInfo">
+            <label for="bajablastalcpreferences">Please indicate whether or not you would like your Baja Blast Freeze to be spiked.</label>
+                 <select id="bajablastalcpreferences" name="bajablastalcpreferences" >
+                <option value="">Select...</option>
+                <option value="yeswithvodka">Yes, with vodka</option>
+                <option value="yeswithrum">Yes, with rum</option>
+                <option value="yeswithtequila">Yes, with tequila</option>
+                <option value="no">No</option>
+                </select>
+            </div>
+
+
+    <p> </p>
+
+<h2>Regarding the Pool</h2>
+    <p>Due to request, the pool will be open for use during the party. 
+        However, we ask that all guests adhere to the following guidelines:</p>
+    <ul>
+        <li>No beverages of any kind are allowed in the pool.</li>
+        <li>Please no excessive splashing or roughhousing.</li>
+    </ul>
+    <p>Thank you for your cooperation! <b>Please note that no shower will be available for use during the party.
+        However, if you wish to rinse off the chlorine after using the pool, there will be a hose available for use
+        by the pool entry ladder. </b>
+    </p>
+            <div id="additionalInfo">
+                <label for="poolpreferences">Please indicate whether or not you wish to use the pool.</label>
+                 <select id="poolpreferences" name="poolpreferences" >
+                <option value="">Select...</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+                </select>
+            </div>
+
+    <p> </p>
+
+        <div class="rsvp">
+              <h2 id="submitHeading">Please submit your RSVP form by clicking the button below.</h2>
+            <button type="button"onclick="submitForm()">Submit RSVP</button>
+        </div>
+        </form>
+    
+    </main>
+ <script src="rsvp.js"></script>
+</body>
+</html>
